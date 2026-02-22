@@ -106,3 +106,49 @@ mainContainer.addEventListener('click', function (event) {
         toggleStyle(currentStatus);
     }
 });
+
+function renderInterview() {
+    filterSection.innerHTML = '';
+    interviewList.forEach(item => {
+        let div = document.createElement('div');
+        div.className = 'relative bg-white p-6 rounded-lg shadow w-full border-l-4 border-green-400 mb-6';
+        div.innerHTML = `
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition text-xl">
+                <i class="fa-regular fa-trash-can"></i>
+            </button>
+            <div class="space-y-6">
+                <div><p class="text-xl font-semibold text-gray-800">${item.companyName}</p><p class="text-sm text-gray-500">${item.position}</p></div>
+                <p class="text-sm text-gray-600">${item.info}</p>
+                <p class="inline-block bg-green-50 py-2 px-4 text-sm font-medium text-green-700 rounded-md">INTERVIEW</p>
+                <p class="text-sm text-gray-600 leading-6">${item.note}</p>
+                <div class="flex gap-3">
+                    <button class="px-4 py-2 btn btn-outline btn-success">Interview</button>
+                    <button class="px-4 py-2 btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>`;
+        filterSection.appendChild(div);
+    });
+}
+
+function renderReject() {
+    filterSection.innerHTML = '';
+    rejectList.forEach(item => {
+        let div = document.createElement('div');
+        div.className = 'relative bg-white p-6 rounded-lg shadow w-full border-l-4 border-red-400 mb-6';
+        div.innerHTML = `
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition text-xl">
+                <i class="fa-regular fa-trash-can"></i>
+            </button>
+            <div class="space-y-6">
+                <div><p class="text-xl font-semibold text-gray-800">${item.companyName}</p><p class="text-sm text-gray-500">${item.position}</p></div>
+                <p class="text-sm text-gray-600">${item.info}</p>
+                <p class="inline-block bg-red-50 py-2 px-4 text-sm font-medium text-red-700 rounded-md">REJECTED</p>
+                <p class="text-sm text-gray-600 leading-6">${item.note}</p>
+                <div class="flex gap-3">
+                    <button class="px-4 py-2 btn btn-outline btn-success">Interview</button>
+                    <button class="px-4 py-2 btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>`;
+        filterSection.appendChild(div);
+    });
+}
