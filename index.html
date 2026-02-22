@@ -46,6 +46,66 @@
             </div>
         </div>
     </header>
+
+    <div class="my-[30px] text-[#E6E7E9] w-[90%] md:w-[70%] mx-auto border">
+        <hr>
+    </div>
+
+    <main class="w-[90%] md:w-[70%] mx-auto">
+        <div class="flex justify-between mb-6">
+            <h1 class="text-[20px] font-semibold text-[#002C5C]"> Available Jobs </h1>
+            <p class="text-[16px] font-medium text-[#64748B]"> <span id="job-available"> 0 </span>jobs </p>
+        </div>
+        <div class=" btn-container mb-4"> <button onclick="toggleStyle('all-btn')"
+                class="btn btn-primary py-2 px-3 w-20 cursor-pointer rounded-sm mr-2 text-[12px] font-semibold text-white"
+                id="all-btn">
+                <p> All </p>
+            </button> <button onclick="toggleStyle('interview-btn')"
+                class="btn btn-soft py-2 px-3 w-20 cursor-pointer rounded-sm mr-2 text-[12px] font-semibold text-slate-500"
+                id="interview-btn">
+                <p> Interview </p>
+            </button> <button onclick="toggleStyle('rejected-btn')"
+                class="btn btn-soft py-2 px-3 w-20 cursor-pointer rounded-sm text-[12px] font-semibold text-slate-500"
+                id="rejected-btn">
+                <p> Rejected </p>
+            </button>
+        </div>
+        <!-- card section -->
+        <section id="filtered-card" class="hidden">
+
+        </section>
+
+        <section id="no-jobs" class="hidden flex flex-col items-center justify-center py-20">
+            <img src="img.png" alt="No Jobs" class="w-24 mb-4">
+            <h2 class="text-2xl font-bold text-[#002C5C]">No jobs available</h2>
+            <p class="text-gray-500">Check back soon for new job opportunities</p>
+        </section>
+
+        <!-- all cards -->
+        <section id="all-cards" class="space-y-16">
+            <!-- Card 1 -->
+            <div class="relative bg-white p-6 rounded-lg shadow w-full"> <button
+                    class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition text-xl"> <i
+                        class="fa-regular fa-trash-can"></i> </button>
+                <div class="job-card space-y-6">
+                    <div>
+                        <p class="comp-name text-xl font-semibold text-gray-800" id="comp-name"> Mobile First Corp </p>
+                        <p class="job-role text-sm text-gray-500" id="job-role"> React Native Developer </p>
+                    </div>
+                    <p class="job-info text-sm text-gray-600" id="job-info"> Remote • Full-time • $130,000 - $175,000
+                    </p>
+                    <p class="job-status inline-block bg-blue-50 py-2 px-4 text-sm font-medium text-[#002C5C] rounded-md"
+                        id="job-status"> Not Applied </p>
+                    <p class="note text-sm text-gray-600 leading-6" id="job-note"> Build cross-platform mobile
+                        applications using React Native. Work on products used by millions of users worldwide. </p>
+                    <div class="flex gap-3"> <button class="px-4 py-2 btn btn-outline btn-success"> Interview </button>
+                        <button class="px-4 py-2 btn btn-outline btn-error"> Rejected </button>
+                    </div>
+                </div>
+            </div>
+            
+    </main>
+
 </body>
 
 </html>
