@@ -1,17 +1,22 @@
 ## 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 **getElementById** finds a single element using its id.
+
 **getElementsByClassName** finds all elements that have a given class name.
+
 **querySelector** finds the first matching element using a CSS selector.
+
 **querySelectorAll** finds all matching elements using a CSS selector.
 
 
 ## 2. How do you create and insert a new element into the DOM?
 To create a new element in the DOM, **document.createElement()** is used.
+
 **For example:**
 ``` js
 const newDiv = document.createElement("div");
 ```
 To insert the new element into the DOM, methods like **appendChild()** are used.
+
 **For example:**
 ```js
 const parent = document.getElementById("container");
