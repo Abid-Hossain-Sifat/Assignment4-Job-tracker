@@ -12,9 +12,18 @@ const filterSection = document.getElementById('filtered-card');
 const noJobsSection = document.getElementById('no-jobs');
 
 function calculateCount() {
-    totalCount.innerText = allCardSection.children.length;
+    const currentTotal = allCardSection.children.length;
+    totalCount.innerText = currentTotal;
     interviewCount.innerText = interviewList.length;
     rejectCount.innerText = rejectList.length;
+
+    if (currentStatus === 'all-btn') {
+        jobAvailable.innerText = currentTotal;
+    } else if (currentStatus === 'interview-btn') {
+        jobAvailable.innerText = interviewList.length;
+    } else if (currentStatus === 'rejected-btn') {
+        jobAvailable.innerText = rejectList.length;
+    }
 }
 calculateCount();
 
